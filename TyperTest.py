@@ -29,6 +29,8 @@ def typertime():
                     if lili[s] == lilo[s]:
                         a += 1
                 a = a/numLetters
+                a = a*100
+                a = round(a, 1)
                         
                 print("You typed the phrase with " + str(a) + "% accuracy")
                 breaker += 1
