@@ -10,8 +10,10 @@ def split(word):
     return list(word)
 
 def typertime():
-    count = 7
+    count = 1
     numLetters = len(keyphrase)
+    numLetters1 = len(keyphrase)
+    numInput = len(x)
     lili = split(keyphrase)
     lilo = split(x)
     a = 0
@@ -25,8 +27,21 @@ def typertime():
             if count == 0:
                 print("Times Up!")
                 time.sleep(0.5)
-                for s in range(0, numLetters):
-                    if lili[s] == lilo[s]:
+                for s in range(0, numLetters1):
+                    if numLetters > numInput or numLetters < numInput:
+                        diff = numLetters - numInput
+                        diff = abs(diff)
+                        for t in range(diff):
+                            if numLetters > numInput:
+                                lili.pop()
+                                numLetters -= 1
+                                a -= 0.5
+                            if numLetters < numInput:
+                                lilo.pop()
+                                numInput -= 1
+                                a -= 1
+                for j in range(numLetters):
+                    if lili[j] == lilo[j]:
                         a += 1
                 a = a/numLetters
                 a = a*100
