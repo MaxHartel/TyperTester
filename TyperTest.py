@@ -3,7 +3,7 @@ import time
 keyphrase = "The quick brown fox jumps over the lazy dog"
 
 
-print("Lets see how fast and accurate you can type! Type the phrase '"+ keyphrase + "' You have 7 seconds")
+print("Lets see how fast and accurate you can type! Type the phrase '"+ keyphrase + "' You must press enter to submit your phrase. You have 10 seconds.The timer has already started, Start!")
 x = input("")
 
 def split(word):
@@ -35,7 +35,6 @@ def typertime():
                             if numLetters > numInput:
                                 lili.pop()
                                 numLetters -= 1
-                                a -= 0.5
                             if numLetters < numInput:
                                 lilo.pop()
                                 numInput -= 1
@@ -43,9 +42,13 @@ def typertime():
                 for j in range(numLetters):
                     if lili[j] == lilo[j]:
                         a += 1
-                a = a/numLetters
-                a = a*100
-                a = round(a, 1)
+                        
+                if numLetters > 0:        
+                    a = a/numLetters1
+                    a = a*100
+                    a = round(a, 1)
+                if numLetters == 0:
+                    a = 0
                         
                 print("You typed the phrase with " + str(a) + "% accuracy")
                 breaker += 1
@@ -55,7 +58,7 @@ def typertime():
 
 
 typertime()
-x = input("")
+
 
 
 
